@@ -1,0 +1,338 @@
+library(datasets)
+data(iris)
+names(iris)
+dim(iris)
+View(iris)
+#internal structure
+str(iris)
+summary(iris)
+class(iris)
+typeof(iris)
+#min value
+min(iris$Sepal.Length)
+#max value
+max(iris$Sepal.Length)
+# range
+range(iris$Sepal.Length)
+#mean
+mean(iris$Sepal.Length)
+#variance
+var(iris$Sepal.Length)
+#standard deviation
+sd(iris$Sepal.Length)
+quantile(iris$Sepal.Length)
+quantile(iris$Sepal.Length,c(0.3,0.6))
+quantile(iris$Sepal.Length,0.3)
+# Boxplotis a chart that graphically represents the five most important descriptive values for a data set. These values include the minimum value, the first quartile, the median, the third quartile, and the maximum value. When graphing this five-number summary, only the horizontal axis displays values. Within the quadrant, a vertical line is placed above each of the summary numbers. A box is drawn around the middle three lines (first quartile, median, and third quartile) and two lines are drawn from the box's edges to the two endpoints (minimum and maximum).
+boxplot(iris$Sepal.Length)
+summary(iris$Sepal.Length)
+# combined boxplot for 4 features
+# plot all features except 5 th
+myboxplt<-boxplot(iris[,-5])
+myboxplt
+myboxplt$out
+# histogram
+#a histogram and a bar chart is that a histogram displays frequencies for a group of data, rather than an individual data point; therefore, no spaces are present between the bars. Typically, a histogram groups data into small chunks (four to eight values per bar on the horizontal axis),
+hist(iris$Sepal.Length)
+h<-hist( iris$Sepal.Length,main="sepal length frequencies- histogram",xlab="Sepal length",xlim=c(3.5,8.5),col="blue",breaks = 3)
+# histogram
+#a histogram and a bar chart is that a histogram displays frequencies for a group of data, rather than an individual data point; therefore, no spaces are present between the bars. Typically, a histogram groups data into small chunks (four to eight values per bar on the horizontal axis),
+hist(iris$Sepal.Length)
+h<-hist( iris$Sepal.Length,main="sepal length frequencies- histogram",xlab="Sepal length",xlim=c(3.5,8.5),col="blue",breaks = 3)
+# to diaplay the details of histogram
+h
+names(iris)
+library(datasets)
+data("iris")
+names(iris)
+str(iris)
+dim(iris)
+View(iris)
+class(iris)
+typeof(iris)
+min(iris$Sepal.Length)
+max(iris$Sepal.Length)
+mean(iris$Sepal.Length)
+range(iris$Sepal.Length)
+sd(iris$Sepal.Length)
+var(iris$Sepal.Length)
+quantile(iris$Sepal.Length)
+hist(iris$Sepal.Length)
+hist(iris$Sepal.Length,main = "sepal length frequencies- histogram",xlab = "Sepal Length",xlim =c(3.5,8.5),col ="blue",breaks = 3)
+h <- hist( iris$Sepal.Length,main="sepal length frequencies- histogram",xlab="Sepal length",xlim=c(3.5,8.5),col="blue", labels = TRUE, breaks = 3, border = "green",las=0)
+h<-hist( iris$Sepal.Length,main="sepal length frequencies- histogram",xlab="Sepal length",xlim=c(3.5,8.5),col="blue",breaks = 3)
+h <- hist( iris$Sepal.Length,main="sepal length frequencies- histogram",xlab="Sepal length",xlim=c(3.5,8.5),col="blue", labels = TRUE, breaks = 3, border = "green")
+h <- hist( iris$Sepal.Length,main="sepal length frequencies- histogram",xlab="Sepal length",xlim=c(3.5,8.5),col="blue", labels = TRUE, breaks = 3, border = "green",las=0)
+,las=0
+h <- hist( iris$Sepal.Length,main="sepal length frequencies- histogram",xlab="Sepal length",xlim=c(3.5,8.5),col="blue", labels = TRUE, breaks = 3, border = "green")
+,las=0
+h
+hist(iris$Sepal.Width)
+hist(iris$Petal.Length)
+hist(iris$Petal.Length,1:7)
+hist(iris$Sepal.Width)
+hist(iris$Sepal.Width,xlim = c(2.0,5.0))
+hist(iris$Sepal.Width,xlim = c(2.0,4.5))
+hist(iris$Sepal.Width,xlim = c(2.0,4.5),2.0:4.5)
+hist(iris$Sepal.Width,xlim = c(2.0,4.5),0.5)
+hist(iris$Sepal.Width,xlim = c(2.0,4.5),3)
+hist(iris$Sepal.Width,xlim = c(2.0,4.5),2)
+hist(iris$Sepal.Width,xlim = c(2.0,4.5),1)
+hist(iris$Sepal.Width,xlim = c(2.0,4.5),4)
+hist(iris$Sepal.Width,xlim = c(2.0,4.5),3)
+4
+hist(iris$Sepal.Width,xlim = c(2.0,4.5),4)
+hist(iris$Petal.Length,1:7)
+hist(iris$Sepal.Width)
+hist(iris$Petal.Width)
+hist(iris$Petal.Width,4)
+hist(iris$Species)
+hist(iris)
+h1<-hist(iris$Sepal.Length,main = "sepal length frequencies- histogram",xlab = "Sepal Length",xlim =c(3.5,8.5),col ="blue",breaks = 3)
+boxplot(iris[,-5])
+# combined boxplot for 4 features
+# plot all features except 5 th
+myboxplt<-boxplot(iris[,-5])
+boxplot(iris$Sepal.Length)
+bplt<-boxplot(iris[,-5])
+bplt$
+bplt$out
+bplt$out
+bplt
+install.packages(c("caretEnsemble", "gridExtra", "VIM"))
+library(dplyr)
+library(dplyr)
+library(ggplot2)
+library(caret)
+library(caretEnsemble)
+library(VIM)
+library(gridExtra)
+big_mart <- read.csv("/home/tarun/LP1/DA/Bigmart_Train.csv")
+head(big_mart)
+summary(big_mart)
+#Cleaning Item_Fat_Content Variable
+#Transforming "low fat" and "LF" to "Low Fat"
+index <- which(big_mart$Item_Fat_Content == "LF" |
+big_mart$Item_Fat_Content == "low fat")
+big_mart[index, "Item_Fat_Content"] <- "Low Fat"
+#Transforming "reg" to "Regular
+index2 <- which(big_mart$Item_Fat_Content == "reg")
+big_mart[index2, "Item_Fat_Content"] <- "Regular"
+#Dropping Unused Levels
+big_mart$Item_Fat_Content <- factor(big_mart$Item_Fat_Content)
+#Imputing Missing Values
+#Using kNN imputation for missing values
+big_mart_imputed <- kNN(big_mart)
+library(ggplot2)
+library(dplyr)
+library(ggplot2)
+library(caret)
+install.packages("caretEnsemble")
+library(caretEnsemble)
+library(VIM)
+install.packages("VIM")
+install.packages("VIM")
+library(dplyr)
+library(dplyr)
+library(ggplot2)
+library(caret)
+library(caretEnsemble)
+library(VIM)
+library(gridExtra)
+big_mart <- read.csv("/home/tarun/LP1/DA/Bigmart_Train.csv")
+head(big_mart)
+summary(big_mart)
+#Cleaning Item_Fat_Content Variable
+#Transforming "low fat" and "LF" to "Low Fat"
+index <- which(big_mart$Item_Fat_Content == "LF" |
+big_mart$Item_Fat_Content == "low fat")
+big_mart[index, "Item_Fat_Content"] <- "Low Fat"
+#Transforming "reg" to "Regular
+index2 <- which(big_mart$Item_Fat_Content == "reg")
+big_mart[index2, "Item_Fat_Content"] <- "Regular"
+#Dropping Unused Levels
+big_mart$Item_Fat_Content <- factor(big_mart$Item_Fat_Content)
+#Imputing Missing Values
+#Using kNN imputation for missing values
+big_mart_imputed <- kNN(big_mart)
+big_mart_imputed <- big_mart_imputed %>%
+select(Item_Identifier:Item_Outlet_Sales)
+summary(big_mart_imputed)
+#Discovering Way to Impute Values for Outlet_Size
+#Outlet Identifier by Outlet Size Table
+table(big_mart_imputed$Outlet_Identifier, big_mart_imputed$Outlet_Size)
+#Outlet Identifier by Outlet_Type Table
+table(big_mart_imputed$Outlet_Identifier, big_mart_imputed$Outlet_Type)
+#Outlet Type by Outlet Size Table
+table(big_mart$Outlet_Type, big_mart_imputed$Outlet_Size)
+#Imputing Small for OUT010 Location Small for OUT010 Location
+index3 <- which(big_mart_imputed$Outlet_Identifier == "OUT010")
+big_mart_imputed[index3, "Outlet_Size"] <- "Small"
+#Imputing Small for OUT017 Location
+index4 <- which(big_mart_imputed$Outlet_Identifier == "OUT017")
+big_mart_imputed[index4, "Outlet_Size"] <- "Small"
+#Imputing Medium for OUT045 Location
+index5 <- which(big_mart_imputed$Outlet_Identifier == "OUT045")
+big_mart_imputed[index5, "Outlet_Size"] <- "Medium"
+#Dropping Unused Levels for Outlet Size Variable
+big_mart_imputed$Outlet_Size <- factor(big_mart_imputed$Outlet_Size)
+#Summary Cleaned Dataset
+summary(big_mart_imputed)
+#Visualizing Data
+#Item Outlet Sales Histogram
+ggplot(big_mart_imputed, aes(x=Item_Outlet_Sales)) +
+geom_histogram(binwidth = 200) +
+labs(title = "Item Outlet Sales Histogram",
+x = "Item Outlet Sales")
+#Item Outlet Sales Histogram by Outlet Identifier
+ggplot(big_mart_imputed, aes(x=Item_Outlet_Sales,
+fill = Outlet_Identifier)) +
+geom_histogram(binwidth = 200) +
+facet_wrap(~ Outlet_Identifier) +
+labs(title = "Item Outlet Sales Histogram",
+x = "Item Outlet Sales")
+#Sales by Outlet Identifier
+ggplot(big_mart_imputed, aes(x = Outlet_Identifier,
+y = Item_Outlet_Sales)) +
+geom_boxplot() +
+labs(title = "Sales by Outlet Identifier",
+x = "Outlet Identifier",
+y = "Item Outlet Sales") +
+theme(axis.text.x = element_text(angle = 90, hjust = 1))
+#Item Outlet Sales by Item MRP and Outlet Identifier
+ggplot(big_mart_imputed, aes(x = Item_MRP,
+y = Item_Outlet_Sales)) +
+geom_bin2d() +
+facet_wrap(~ Outlet_Identifier) +
+labs(title = "Item Outlet Sales by Item MRP and Outlet Identifier",
+x = "Item MRP",
+y = "Item Outlet Sales")
+#Median Sales by Location
+big_mart_imputed %>%
+group_by(Outlet_Identifier) %>%
+summarize(median_sales = median(Item_Outlet_Sales)) %>%
+arrange(desc(median_sales))
+#Correlation of Item Outlet Sales and Item MRP
+cor(big_mart_imputed$Item_MRP, big_mart_imputed$Item_Outlet_Sales)
+#Machine Learning Models
+#Removing Near Zero Variance Variables
+#Preparing Data For Machine Learning
+big_mart_sub <- big_mart_imputed %>%
+select(-Item_Identifier, -Outlet_Identifier)
+set.seed(366284)
+inTrain <- createDataPartition(y = big_mart_sub$Item_Outlet_Sales,
+p = 0.7, list=FALSE)
+train <- big_mart_sub[inTrain, ]
+test <- big_mart_sub[-inTrain, ]
+#Building List
+control <- trainControl(method = "repeatedcv", number = 10, repeats = 3, savePredictions = TRUE, classProbs = TRUE)
+algorithmList <- c('glm', 'glmnet', 'lm', 'ranger', 'treebag', 'gbm', 'bagEarth')
+models <- caretList(Item_Outlet_Sales ~ ., train, trControl = control, methodList = algorithmList)
+library(dplyr)
+library(dplyr)
+library(ggplot2)
+library(caret)
+library(caretEnsemble)
+library(VIM)
+library(gridExtra)
+big_mart <- read.csv("/home/tarun/LP1/DA/Bigmart_Train.csv")
+head(big_mart)
+summary(big_mart)
+#Cleaning Item_Fat_Content Variable
+#Transforming "low fat" and "LF" to "Low Fat"
+index <- which(big_mart$Item_Fat_Content == "LF" |
+big_mart$Item_Fat_Content == "low fat")
+big_mart[index, "Item_Fat_Content"] <- "Low Fat"
+#Transforming "reg" to "Regular
+index2 <- which(big_mart$Item_Fat_Content == "reg")
+big_mart[index2, "Item_Fat_Content"] <- "Regular"
+#Dropping Unused Levels
+big_mart$Item_Fat_Content <- factor(big_mart$Item_Fat_Content)
+#Imputing Missing Values
+#Using kNN imputation for missing values
+big_mart_imputed <- kNN(big_mart)
+big_mart_imputed <- big_mart_imputed %>%
+select(Item_Identifier:Item_Outlet_Sales)
+summary(big_mart_imputed)
+#Discovering Way to Impute Values for Outlet_Size
+#Outlet Identifier by Outlet Size Table
+table(big_mart_imputed$Outlet_Identifier, big_mart_imputed$Outlet_Size)
+#Outlet Identifier by Outlet_Type Table
+table(big_mart_imputed$Outlet_Identifier, big_mart_imputed$Outlet_Type)
+#Outlet Type by Outlet Size Table
+table(big_mart$Outlet_Type, big_mart_imputed$Outlet_Size)
+#Imputing Small for OUT010 Location Small for OUT010 Location
+index3 <- which(big_mart_imputed$Outlet_Identifier == "OUT010")
+big_mart_imputed[index3, "Outlet_Size"] <- "Small"
+#Imputing Small for OUT017 Location
+index4 <- which(big_mart_imputed$Outlet_Identifier == "OUT017")
+big_mart_imputed[index4, "Outlet_Size"] <- "Small"
+#Imputing Medium for OUT045 Location
+index5 <- which(big_mart_imputed$Outlet_Identifier == "OUT045")
+big_mart_imputed[index5, "Outlet_Size"] <- "Medium"
+#Dropping Unused Levels for Outlet Size Variable
+big_mart_imputed$Outlet_Size <- factor(big_mart_imputed$Outlet_Size)
+#Summary Cleaned Dataset
+summary(big_mart_imputed)
+#Visualizing Data
+#Item Outlet Sales Histogram
+ggplot(big_mart_imputed, aes(x=Item_Outlet_Sales)) +
+geom_histogram(binwidth = 200) +
+labs(title = "Item Outlet Sales Histogram",
+x = "Item Outlet Sales")
+#Item Outlet Sales Histogram by Outlet Identifier
+ggplot(big_mart_imputed, aes(x=Item_Outlet_Sales,
+fill = Outlet_Identifier)) +
+geom_histogram(binwidth = 200) +
+facet_wrap(~ Outlet_Identifier) +
+labs(title = "Item Outlet Sales Histogram",
+x = "Item Outlet Sales")
+#Sales by Outlet Identifier
+ggplot(big_mart_imputed, aes(x = Outlet_Identifier,
+y = Item_Outlet_Sales)) +
+geom_boxplot() +
+labs(title = "Sales by Outlet Identifier",
+x = "Outlet Identifier",
+y = "Item Outlet Sales") +
+theme(axis.text.x = element_text(angle = 90, hjust = 1))
+#Item Outlet Sales by Item MRP and Outlet Identifier
+ggplot(big_mart_imputed, aes(x = Item_MRP,
+y = Item_Outlet_Sales)) +
+geom_bin2d() +
+facet_wrap(~ Outlet_Identifier) +
+labs(title = "Item Outlet Sales by Item MRP and Outlet Identifier",
+x = "Item MRP",
+y = "Item Outlet Sales")
+#Median Sales by Location
+big_mart_imputed %>%
+group_by(Outlet_Identifier) %>%
+summarize(median_sales = median(Item_Outlet_Sales)) %>%
+arrange(desc(median_sales))
+#Correlation of Item Outlet Sales and Item MRP
+cor(big_mart_imputed$Item_MRP, big_mart_imputed$Item_Outlet_Sales)
+#Machine Learning Models
+#Removing Near Zero Variance Variables
+#Preparing Data For Machine Learning
+big_mart_sub <- big_mart_imputed  % > %
+select(-Item_Identifier, -Outlet_Identifier)
+set.seed(366284)
+inTrain <- createDataPartition(y = big_mart_sub$Item_Outlet_Sales,
+p = 0.7, list=FALSE)
+train <- big_mart_sub[inTrain, ]
+#Machine Learning Models
+#Removing Near Zero Variance Variables
+#Preparing Data For Machine Learning
+big_mart_sub <- big_mart_imputed  %>%
+select(-Item_Identifier, -Outlet_Identifier)
+set.seed(366284)
+inTrain <- createDataPartition(y = big_mart_sub$Item_Outlet_Sales,
+p = 0.7, list=FALSE)
+train <- big_mart_sub[inTrain, ]
+test <- big_mart_sub[-inTrain, ]
+#Building List
+control <- trainControl(method = "repeatedcv", number = 10, repeats = 3, savePredictions = TRUE, classProbs = TRUE)
+algorithmList <- c('glm', 'glmnet', 'lm', 'ranger', 'treebag', 'gbm', 'bagEarth')
+models <- caretList(Item_Outlet_Sales ~ ., train, trControl = control, methodList = algorithmList)
+#Model Performance
+results <- resamples(models)
+summary(results)

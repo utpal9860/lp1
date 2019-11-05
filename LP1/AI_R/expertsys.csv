@@ -1,0 +1,11 @@
+Id,Disease_Name,Fever,Sore Throat,Body Rash,Tiredness,Joint Pain,Muscle Pain,weight loss,Loss of Appetite,recurrent infections,Abdominal Pain,Yellowing of Skin,grey-coloured poo,dark urine,runny or blocked nose,cough,headache,chills,vomiting,Feeling Thirsty,blurred vision,rapid heartbeat,difficulty breathing,spotty red rash,persistent headaches,seizures (fits),behavioural changes,feeling drowsy,breathless to eat or speak,fatigue
+1,ARLD,1,0,0,0,0,0,1,1,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1
+2,Asthma,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0,0,1,1,0
+3,Brain tumour,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,1,0,0,0,1,1,1,1,0,0
+4,Chickenpox,1,0,1,0,0,1,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0,0,0,0
+5,Diarrhoea,0,0,0,1,0,0,0,1,0,1,1,0,1,0,0,0,1,1,1,0,1,0,0,0,0,0,0,0,0
+6,Diabetes,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0
+7,Ebola virus disease,1,1,1,0,1,1,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0
+8,Flu,1,1,0,1,1,1,0,1,0,1,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0
+9,Hepatitis B,1,0,0,1,0,0,0,1,0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+10,HIV,1,1,1,1,1,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
